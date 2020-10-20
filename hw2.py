@@ -1,5 +1,5 @@
 from flask import Flask , render_template, request, Response, jsonify, abort
-#import requests
+import requests
 import json
 
 application = Flask(__name__)
@@ -13,15 +13,15 @@ def home():
 def about():
     return  render_template('about.html')
 
-#@application.route('/panel',methods = ['GET','POST'])
-#def panel():
-#    if request.method == 'POST':
-#        if request.form['submit_button']== '開燈':
-#            print("Open")
-#            url = 'http://zonicspaceworkshop.com/Iot/Light'
-#            data = {'Switch':'Open'}
-#            headers = {'Content-Type': 'application/json'}
-#            requests.post(url, data=json.dumps(data),headers = headers)
+@application.route('/panel',methods = ['GET','POST'])
+def panel():
+    if request.method == 'POST':
+        if request.form['submit_button']== '開燈':
+            print("Open")
+            url = 'http://zonicspaceworkshop.com/Iot/Light'
+            data = {'Switch':'Open'}
+            headers = {'Content-Type': 'application/json'}
+            requests.post(url, data=json.dumps(data),headers = headers)
 #            return render_template('panel.html')
 #        elif request.form['submit_button']=='關燈':
 #            url = 'http://zonicspaceworkshop.com/Iot/Light'
