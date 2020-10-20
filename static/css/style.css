@@ -1,0 +1,16 @@
+html, body{
+    background-color: aqua;
+}
+
+p {
+    font-size: 20px;
+    color: rgb(99, 57, 116);
+}
+
+p.image{
+    float: right;
+}
+
+h1{
+    color: black;
+}
