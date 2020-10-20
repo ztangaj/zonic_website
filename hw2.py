@@ -22,16 +22,16 @@ def panel():
             data = {'Switch':'Open'}
             headers = {'Content-Type': 'application/json'}
             requests.post(url, data=json.dumps(data),headers = headers)
-#            return render_template('panel.html')
-#        elif request.form['submit_button']=='關燈':
-#            url = 'http://zonicspaceworkshop.com/Iot/Light'
-#            data = {'Switch':'Close'}
-#            headers = {'Content-Type': 'application/json'}
-#            requests.post(url, data=json.dumps(data),headers = headers)
-#            return render_template('panel.html')
-#            #return ("Close")
-#    elif request.method == 'GET':
-#        return render_template('panel.html')
+            return render_template('panel.html')
+        elif request.form['submit_button']=='關燈':
+            url = 'http://zonicspaceworkshop.com/Iot/Light'
+            data = {'Switch':'Close'}
+            headers = {'Content-Type': 'application/json'}
+            requests.post(url, data=json.dumps(data),headers = headers)
+            return render_template('panel.html')
+            #return ("Close")
+    elif request.method == 'GET':
+        return render_template('panel.html')
 
 #webhook Iot
 @application.route('/Iot/AC',methods = ['POST','GET'])
